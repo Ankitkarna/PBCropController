@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
 
   spec.homepage     = "https://github.com/Ankitkarna/PBCropController"
 
-    spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+    spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   spec.author             = { "Ankit" => "ankit.karna2011@gmail.com" }
@@ -25,7 +25,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Source"
+  spec.source_files  = "PBCropController/Source"
+  spec.swift_version = "5.0"
   
 
 end

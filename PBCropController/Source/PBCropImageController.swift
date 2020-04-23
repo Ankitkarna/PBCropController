@@ -14,15 +14,15 @@ public protocol PBCropImageDelegate: AnyObject {
 
 public class PBCropImageController: UIViewController {
 
-    var image: UIImage!
-    let cropType: CropType
+    public var image: UIImage!
+    public let cropType: CropType
     
     private var cropView: ImageCropView!
     private let viewModel = CropViewModel()
     
-    weak var delegate: PBCropImageDelegate?
+    weak public var delegate: PBCropImageDelegate?
     
-    init(cropType: CropType) {
+    public init(cropType: CropType) {
         self.cropType = cropType
         super.init(nibName: nil, bundle: nil)
     }
@@ -61,6 +61,8 @@ public class PBCropImageController: UIViewController {
         let croppedImage = viewModel.cropImage(image, toRect: cropRect, viewSize: imageViewFrame.size)
         
         delegate?.didFinishCropping(outputImage: croppedImage)
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
